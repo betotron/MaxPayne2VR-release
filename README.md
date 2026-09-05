@@ -7,7 +7,7 @@ Real stereoscopy, head tracking, motion controllers, and aiming with your hand.
 
 ### 🎬 See it running
 
-[![Max Payne 2 VR in action](imagenes/video.jpg)](https://github.com/betotron/MaxPayne2VR-release/blob/main/demo/MaxPayne2VR-demo.mp4)
+[![Max Payne 2 VR in action](imagenes/video.jpg)](https://youtu.be/eWRuLyLwpNQ)
 
 *(a minute of real gameplay, recorded inside the headset)*
 

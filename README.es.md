@@ -7,7 +7,7 @@ Estereoscopia real, cabeza con seguimiento, mandos y apuntado con la mano.
 
 ### 🎬 Mira cómo se ve
 
-[![Max Payne 2 VR en marcha](imagenes/video.jpg)](https://github.com/betotron/MaxPayne2VR-release/blob/main/demo/MaxPayne2VR-demo.mp4)
+[![Max Payne 2 VR en marcha](imagenes/video.jpg)](https://youtu.be/eWRuLyLwpNQ)
 
 *(un minuto de partida real, grabado dentro del casco)*
 
