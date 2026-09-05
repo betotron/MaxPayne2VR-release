@@ -5,6 +5,13 @@ Real stereoscopy, head tracking, motion controllers, and aiming with your hand.
 
 ![Max Payne 2 VR](imagenes/portada_en.png)
 
+### 🎬 See it running
+
+[![Max Payne 2 VR in action](imagenes/video.jpg)](https://github.com/betotron/MaxPayne2VR-release/blob/main/demo/MaxPayne2VR-demo.mp4)
+
+*(a minute of real gameplay, recorded inside the headset)*
+
+
 > 🇪🇸 **[Versión en español aquí](README.es.md)** · Mod created by **betotron** —
 > [github.com/betotron](https://github.com/betotron) · Powered by
 > **[techbuzzo.com](https://techbuzzo.com)**
