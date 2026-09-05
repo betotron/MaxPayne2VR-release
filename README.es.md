@@ -39,6 +39,23 @@ adjunto, si puedes.
 
 ---
 
+## ☕ ¿Te ha gustado? Invítame a un café
+
+Este mod lo hace **una persona**, en su tiempo libre, y es **gratis y siempre lo será**.
+
+Meter realidad virtual dentro de un motor de 2003 que nunca la imagino son meses de trabajo:
+descompilar el juego, encontrar donde vive cada cosa y probarlo con el casco puesto una y otra
+vez. Si te ha hecho disfrutar y quieres que siga mejorando —o que haga esto mismo con otros
+juegos—, un donativo ayuda mas de lo que parece.
+
+> ### 💙 [Dar las gracias con un donativo](https://donate.stripe.com/7sY00la1I37i8el75YbII04?locale=es)
+
+Sin obligacion ninguna, y sin nada que se desbloquee al pagar: **el mod es el mismo para todo el
+mundo.** Con contarlo por ahi o dejar una estrella ⭐ en el repositorio ya me ayudas.
+
+
+---
+
 ## Qué es esto
 
 No es una pantalla flotante dentro del casco. El juego se dibuja **dos veces, una por ojo**, con

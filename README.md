@@ -39,6 +39,23 @@ attached if you can.
 
 ---
 
+## ☕ Enjoying it? Buy me a coffee
+
+This mod is made by **one person**, in their spare time, and it is **free and always will be**.
+
+Putting virtual reality inside a 2003 engine that never imagined it takes months: decompiling the
+game, finding where everything lives, and testing it with the headset on over and over. If it made
+your day and you'd like it to keep improving — or to see the same done to other games — a donation
+helps more than you'd think.
+
+> ### 💙 [Say thanks with a donation](https://donate.stripe.com/7sY00la1I37i8el75YbII04?locale=en)
+
+No obligation at all, and nothing unlocks when you pay: **the mod is the same for everyone.**
+Telling a friend or leaving a ⭐ on the repository helps too.
+
+
+---
+
 ## What this is
 
 This is not a floating screen inside your headset. The game is rendered **twice, once per eye**,
