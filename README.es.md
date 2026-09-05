@@ -3,6 +3,8 @@
 **Realidad virtual nativa para *Max Payne 2: The Fall of Max Payne* (2003).**
 Estereoscopia real, cabeza con seguimiento, mandos y apuntado con la mano.
 
+![Max Payne 2 VR](imagenes/portada_es.png)
+
 > 🇬🇧 **[English version here](README.md)** · Mod created by **betotron** —
 > [github.com/betotron](https://github.com/betotron) · Powered by
 > **[techbuzzo.com](https://techbuzzo.com)**
@@ -160,9 +162,11 @@ de lo que verás dentro del casco.**
 
 | opción | qué poner |
 |---|---|
-| **Adaptador gráfico** | tu tarjeta (no el adaptador integrado) |
-| **Resolución de** | **la más alta de la lista**, y que acabe en **× 32** |
+| **Adaptador gráfico** / *Display Adapter* | tu tarjeta (no el adaptador integrado) |
+| **Resolución de** / *Screen Mode* | **la más alta de la lista**, y que acabe en **× 32** |
 | **Aceleración** | **D3D Hardware T&L** |
+
+![En el lanzador, elige la resolucion mas alta](imagenes/launcher.JPG)
 
 **Por qué importa tanto:** el mod coge la imagen que dibuja el juego y la estira hasta el tamaño
 que pide el casco. Un Quest 3 pide **2112 × 2304 por ojo**. Si dejas el juego en 800 × 600, esa

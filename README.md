@@ -3,6 +3,8 @@
 **Native virtual reality for *Max Payne 2: The Fall of Max Payne* (2003).**
 Real stereoscopy, head tracking, motion controllers, and aiming with your hand.
 
+![Max Payne 2 VR](imagenes/portada_en.png)
+
 > 🇪🇸 **[Versión en español aquí](README.es.md)** · Mod created by **betotron** —
 > [github.com/betotron](https://github.com/betotron) · Powered by
 > **[techbuzzo.com](https://techbuzzo.com)**
@@ -159,9 +161,11 @@ sharp everything looks inside the headset.**
 
 | option | what to pick |
 |---|---|
-| **Graphics adapter** | your GPU (not the integrated one) |
-| **Resolution** | **the highest one in the list**, ending in **× 32** |
+| **Display Adapter** | your GPU (not the integrated one) |
+| **Screen Mode** | **the highest one in the list**, ending in **× 32** |
 | **Acceleration** | **D3D Hardware T&L** |
+
+![In the launcher, pick the highest screen mode](imagenes/launcher.JPG)
 
 **Why it matters so much:** the mod takes the image the game renders and stretches it to the size
 the headset asks for. A Quest 3 asks for **2112 × 2304 per eye**. If you leave the game at
