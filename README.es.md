@@ -9,6 +9,34 @@ Estereoscopia real, cabeza con seguimiento, mandos y apuntado con la mano.
 
 ---
 
+## Estado: **versión 1.1 · BETA**
+
+**Se juega de principio a fin y funciona bien.** Pero está **en desarrollo activo**, y prefiero
+decirte lo que falta antes de que lo descubras tú.
+
+**Lo que ya funciona bien:**
+
+✅ Estereoscopia real · ✅ cabeza con seguimiento (6 grados de libertad) · ✅ apuntado con la mano ·
+✅ menú con los mandos · ✅ panel de vida y balas · ✅ cinemáticas y novela gráfica en pantalla
+flotante · ✅ caminar con la palanca y con tus propios pasos
+
+**Lo que todavía está cojo, dicho sin adornos:**
+
+| | |
+|---|---|
+| 🌤️ **El cielo se mueve contigo** | en exteriores, el fondo esférico gira con tu cabeza en vez de quedarse quieto |
+| 💪 **El brazo se tuerce** | al mover mucho el brazo, los huesos se doblan hacia dentro y la ropa se deforma |
+| 🔫 **El selector de armas** | a veces ofrece armas que todavía no llevas |
+| 🎬 **Los encuadres de las cinemáticas** | van mucho mejor que antes, pero en algunos planos aún hay que girar la cabeza |
+| 📖 **Alguna novela gráfica** | la mayoría van a la pantalla flotante; alguna todavía no |
+| 💥 **Cierres esporádicos** | el motor de 2003 se cae de vez en cuando por un hueso que él mismo no comprueba. El mod deja escrito el motivo en su registro |
+
+Nada de eso impide jugar. Si te encuentras algo distinto,
+**[abre un issue](https://github.com/betotron/MaxPayne2VR-release/issues)** — con el registro
+adjunto, si puedes.
+
+---
+
 ## Qué es esto
 
 No es una pantalla flotante dentro del casco. El juego se dibuja **dos veces, una por ojo**, con
@@ -309,6 +337,8 @@ Los textos completos, en [`LICENCIAS.txt`](LICENCIAS.txt).
 
 | | |
 |---|---|
-| candidato | `C-235` |
+| version | **1.1 BETA** |
+| candidato interno | `C-235` |
 | SHA-256 de `winmm.dll` | `76FD1F14D4E9AE3B78565A52AA1B020D3705998C1BCF5DC818430C11642F8F2E` |
+| DXVK incluido | 3.0.2 (32 bits) |
 

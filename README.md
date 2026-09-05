@@ -9,6 +9,34 @@ Real stereoscopy, head tracking, motion controllers, and aiming with your hand.
 
 ---
 
+## Status: **version 1.1 · BETA**
+
+**It plays from start to finish and it works well.** But it is **under active development**, and
+I'd rather tell you what's missing than let you find out on your own.
+
+**What already works well:**
+
+✅ Real stereoscopy · ✅ head tracking (6 degrees of freedom) · ✅ hand aiming · ✅ menu with the
+controllers · ✅ health and ammo panel · ✅ cutscenes and graphic novels on a floating screen ·
+✅ walking with the stick and with your own steps
+
+**What's still rough, said plainly:**
+
+| | |
+|---|---|
+| 🌤️ **The sky moves with you** | outdoors, the spherical background turns with your head instead of staying put |
+| 💪 **The arm twists** | move the arm a lot and the bones fold inward, deforming the clothing |
+| 🔫 **The weapon selector** | sometimes offers weapons you aren't carrying yet |
+| 🎬 **Cutscene framing** | much better than it was, but some shots still make you turn your head |
+| 📖 **The odd graphic novel** | most reach the floating screen; a few still don't |
+| 💥 **Occasional crashes** | the 2003 engine sometimes trips over a bone it never checks itself. The mod writes the reason to its log |
+
+None of that stops you playing. If you hit something different,
+**[open an issue](https://github.com/betotron/MaxPayne2VR-release/issues)** — with the log
+attached if you can.
+
+---
+
 ## What this is
 
 This is not a floating screen inside your headset. The game is rendered **twice, once per eye**,
@@ -311,6 +339,8 @@ Full texts in [`LICENCIAS.txt`](LICENCIAS.txt).
 
 | | |
 |---|---|
-| build | `C-235` |
+| version | **1.1 BETA** |
+| internal build | `C-235` |
 | SHA-256 of `winmm.dll` | `76FD1F14D4E9AE3B78565A52AA1B020D3705998C1BCF5DC818430C11642F8F2E` |
+| DXVK bundled | 3.0.2 (32-bit) |
 
