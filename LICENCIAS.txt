@@ -221,3 +221,42 @@ EN  Max Payne 2 is the property of Remedy Entertainment and Rockstar
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
+
+
+===============================================================================
+DXVK  (d3d8.dll, d3d9.dll)  -  licencia zlib/libpng  /  zlib-libpng licence
+===============================================================================
+
+ES  Este paquete incluye DXVK 3.0.2 (32 bits) SIN MODIFICAR. Se reparte tal
+    cual y no se reclama su autoria.
+EN  This package includes unmodified DXVK 3.0.2 (32-bit). It is redistributed
+    as-is, and no authorship of it is claimed.
+
+    https://github.com/doitsujin/dxvk
+
+-------------------------------------------------------------------------------
+
+                  Copyright (c) 2017 Philip Rebohle
+                  Copyright (c) 2019 Joshua Ashton
+                  Copyright (c) 2019 Robin Kertels
+                  Copyright (c) 2023 Jeffrey Ellison
+
+                          zlib/libpng license
+
+This software is provided 'as-is', without any express or implied
+warranty. In no event will the authors be held liable for any damages
+arising from the use of this software.
+
+Permission is granted to anyone to use this software for any purpose,
+including commercial applications, and to alter it and redistribute it
+freely, subject to the following restrictions:
+
+– The origin of this software must not be misrepresented; you must not
+  claim that you wrote the original software. If you use this software
+  in a product, an acknowledgment in the product documentation would be
+  appreciated but is not required.
+
+– Altered source versions must be plainly marked as such, and must not
+  be misrepresented as being the original software.
+
+– This notice may not be removed or altered from any source distribution.

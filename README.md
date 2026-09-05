@@ -1,233 +1,278 @@
 # Max Payne 2 VR
 
-**Realidad virtual nativa para *Max Payne 2: The Fall of Max Payne* (2003).**
-Estereoscopia real, cabeza con seguimiento, mandos y apuntado con la mano.
+**Native virtual reality for *Max Payne 2: The Fall of Max Payne* (2003).**
+Real stereoscopy, head tracking, motion controllers, and aiming with your hand.
 
-> 🇬🇧 **[English version here](README.en.md)**
-
-> Mod created by **betotron** — [github.com/betotron](https://github.com/betotron)
-> Powered by **[techbuzzo.com](https://techbuzzo.com)**
+> 🇪🇸 **[Versión en español aquí](README.es.md)** · Mod created by **betotron** —
+> [github.com/betotron](https://github.com/betotron) · Powered by
+> **[techbuzzo.com](https://techbuzzo.com)**
 
 ---
 
-## Qué es esto
+## What this is
 
-No es una pantalla flotante dentro del casco. El juego se dibuja **dos veces, una por ojo**, con
-la cámara del motor movida por tu cabeza. Mueves la cabeza y el mundo se queda quieto; apuntas con
-la mano y el arma va donde apuntas; das un paso y Max da un paso.
+This is not a floating screen inside your headset. The game is rendered **twice, once per eye**,
+with the engine's own camera driven by your head. You turn your head and the world stays put; you
+point your hand and the gun goes where you point; you take a step and Max takes a step.
 
 | | |
 |---|---|
-| Estereoscopia real | sí, dos vistas por fotograma |
-| Cabeza con seguimiento | sí, giro y posición (6 grados de libertad) |
-| Apuntado con la mano | sí |
-| Menú del juego con los mandos | sí |
-| Panel de vida y balas en el mundo | sí |
-| Cinemáticas y novela gráfica | en pantalla plana flotante |
+| Real stereoscopy | yes, two views per frame |
+| Head tracking | yes, rotation and position (6 degrees of freedom) |
+| Hand aiming | yes |
+| Game menu with the controllers | yes |
+| Health and ammo panel in world space | yes |
+| Cutscenes and graphic novels | on a floating flat screen |
 
 ---
 
-## Antes de empezar: qué necesitas
+## ⚠️ Read this before anything else: your VR runtime
+
+Max Payne 2 is a **32-bit** program from 2003. A 32-bit program can only talk to a **32-bit
+OpenXR runtime**, and most modern VR software only installs a 64-bit one.
+
+| runtime | status |
+|---|---|
+| **Virtual Desktop** | ✅ **Works. It is the only one confirmed working.** |
+| **SteamVR** | ❌ **Does not work.** It only registers a 64-bit runtime, so the game cannot even start it |
+| **Oculus / Meta Link and Air Link** | ❌ **Did not work in our tests** |
+
+**What the mod's own log says**, word for word, on each attempt:
+
+```
+SteamVR    ->  xrCreateInstance -> -51 RUNTIME_UNAVAILABLE   (the runtime never starts)
+Virtual Desktop ->  runtime VirtualDesktopXR ... session RUNNING
+```
+
+**About Meta Link:** the Meta app has a "Set Oculus as active OpenXR runtime" button, but it
+switches only the **64-bit** entry. The 32-bit entry — the only one Max Payne 2 reads — stays
+pointing wherever it was. The Oculus 32-bit runtime files do exist on disk, so it may be
+fixable, but **it has never been seen working** and it is not documented here as supported.
+
+> ### 👉 Use Virtual Desktop.
+> It is what this mod was developed and tested on, with a **Meta Quest 3**.
+
+---
+
+## What you need
 
 | | |
 |---|---|
-| **Max Payne 2** | la versión de Steam o de GOG |
-| **DXVK** | los archivos `d3d8.dll` / `d3d9.dll` dentro de la carpeta del juego. Si usas la build **Payne Evolution**, ya vienen |
-| **Un casco con OpenXR de 32 bits** | ver la tabla de abajo — **esto es importante** |
-| **Drivers de la tarjeta al día** | el mod usa Vulkan, que viene con el driver |
+| **Max Payne 2** | the Steam or GOG version. You need to own the game |
+| **Virtual Desktop** | on the PC and on the headset |
+| **Up-to-date GPU drivers** | the mod uses Vulkan, which ships with your driver |
+| **DXVK** | **included in this download.** You do not have to find it |
 
-### ⚠️ Qué runtime de realidad virtual funciona, y cuál no
-
-Max Payne 2 es un programa de **32 bits** (de 2003). Un programa de 32 bits **solo puede usar un
-runtime de OpenXR de 32 bits**. Eso deja fuera a uno muy conocido:
-
-| runtime | ¿funciona? | por qué |
-|---|---|---|
-| **Virtual Desktop** | ✅ **Sí — es con el que está desarrollado y probado** | instala `virtualdesktop-openxr-32.json` |
-| **Oculus / Meta Link y Air Link** | ⚠️ **Debería** — no probado | instala `oculus_openxr_32.json`, que es de 32 bits |
-| **SteamVR** | ❌ **No** | solo instala `steamxr_win64.json`. **No tiene runtime de 32 bits**, así que un juego de 32 bits no puede usarlo. No es una limitación del mod |
-
-**En resumen: usa Virtual Desktop.** Es lo único probado de principio a fin, con un **Meta Quest 3**.
+Nothing else. No Visual Studio, no SDKs, no separate runtimes.
 
 ---
 
-## Instalación
+## Installation
 
-### Paso 1 · Descarga los archivos
+### Step 1 · Download
 
-Descarga este repositorio (botón verde **Code** → **Download ZIP**) y descomprímelo.
+Green **Code** button → **Download ZIP** → unzip it anywhere.
 
-### Paso 2 · Abre la carpeta del juego
+### Step 2 · Open the game folder
 
-En Steam: clic derecho sobre *Max Payne 2* → **Administrar** → **Explorar archivos locales**.
+In Steam: right-click *Max Payne 2* → **Manage** → **Browse local files**.
+It's the folder that contains `MaxPayne2.exe`.
 
-Es la carpeta donde está `MaxPayne2.exe`.
+### Step 3 · Copy the **contents** of the `mod` folder
 
-### Paso 3 · Copia los DOS archivos
+> ### ⚠️ The single most important thing in this guide
+> **Do NOT copy the `mod` folder itself.** Open it, and copy **the five files inside**, loose,
+> **next to `MaxPayne2.exe`**.
 
-> ### ⚠️ Lo más importante de toda la guía
-> **La carpeta `mod` NO se copia.** Se copian **los dos archivos que hay dentro de ella**, y van
-> sueltos **junto a `MaxPayne2.exe`**.
-
-**Lo que descargas:**
+**What you downloaded:**
 
 ```
 MaxPayne2VR-release/
-├── mod/
-│   ├── winmm.dll            <- ESTE
-│   └── MaxPayne2VR.ini      <- Y ESTE
+├── mod/                      <- open this folder, don't copy it
+│   ├── winmm.dll             <- the mod
+│   ├── MaxPayne2VR.ini       <- its settings
+│   ├── d3d8.dll              <- DXVK 3.0.2 (32-bit)
+│   ├── d3d9.dll              <- DXVK 3.0.2 (32-bit)
+│   └── dxvk.conf             <- DXVK settings
 ├── README.md
+├── README.es.md
 └── LICENCIAS.txt
 ```
 
-**Cómo tiene que quedar la carpeta del juego:**
+**How the game folder has to end up:**
 
 ```
 Max Payne 2 The Fall of Max Payne/
-├── MaxPayne2.exe
-├── d3d8.dll                 <- de DXVK, ya estaba
-├── d3d9.dll                 <- de DXVK, ya estaba
-├── winmm.dll                <- ✅ AÑADIDO POR TI
-├── MaxPayne2VR.ini          <- ✅ AÑADIDO POR TI
+├── MaxPayne2.exe             <- was already there
+├── winmm.dll                 <- ✅ you added these five
+├── MaxPayne2VR.ini           <- ✅
+├── d3d8.dll                  <- ✅
+├── d3d9.dll                  <- ✅
+├── dxvk.conf                 <- ✅
 └── ...
 ```
 
-❌ **Mal:** `Max Payne 2\mod\winmm.dll`
-✅ **Bien:** `Max Payne 2\winmm.dll`
+❌ **Wrong:** `Max Payne 2\mod\winmm.dll`
+✅ **Right:** `Max Payne 2\winmm.dll`
 
-### Paso 4 · Ajusta el lanzador del juego — **no te lo saltes**
+> **If you already have DXVK, dgVoodoo or another wrapper in that folder**, these files will
+> replace `d3d8.dll` and `d3d9.dll`. Back up yours first if you want them back.
+>
+> **Why we ship DXVK and why the version matters:** the mod reads the game's rendered frame
+> straight out of DXVK as a Vulkan image, and to do that it uses DXVK's internal interface with
+> the exact layout of **version 3.0.2**. A different version can rearrange that layout, and when
+> that happens the game **closes instead of showing an error**. So the tested version comes in
+> the box. Don't swap it for a newer one unless you enjoy debugging.
 
-Al abrir el juego sale primero una ventanita, el lanzador. **Lo que elijas ahí decide la nitidez
-de lo que verás dentro del casco.**
+### Step 4 · Set up the game launcher — **do not skip this**
 
-| opción | qué poner |
+When you start the game, a small launcher window opens first. **What you pick there decides how
+sharp everything looks inside the headset.**
+
+| option | what to pick |
 |---|---|
-| **Adaptador gráfico** | tu tarjeta (no el adaptador integrado) |
-| **Resolución de** | **la más alta de la lista**, y que acabe en **× 32** |
-| **Aceleración** | **D3D Hardware T&L** |
+| **Graphics adapter** | your GPU (not the integrated one) |
+| **Resolution** | **the highest one in the list**, ending in **× 32** |
+| **Acceleration** | **D3D Hardware T&L** |
 
-**Por qué importa tanto:** el mod coge la imagen que dibuja el juego y la estira hasta el tamaño
-que pide el casco. Un Quest 3 pide **2112 × 2304 por ojo**. Si dejas el juego en 800 × 600, esa
-imagen se estira casi tres veces y se ve borrosa. **La resolución del lanzador es la calidad que
-vas a ver.**
+**Why it matters so much:** the mod takes the image the game renders and stretches it to the size
+the headset asks for. A Quest 3 asks for **2112 × 2304 per eye**. If you leave the game at
+800 × 600, that image gets stretched almost three times and looks blurry. **The launcher
+resolution is the quality you will see.**
 
-En un equipo de referencia, la lista llega hasta **2715 × 1527 × 32**. En el tuyo puede ser otra:
-**coge siempre la última de la lista.**
+On a reference machine the list goes up to **2715 × 1527 × 32**. Yours may differ — **always pick
+the last entry in the list.**
 
-### Paso 5 · Ponte el casco y juega
+### Step 5 · Put the headset on and play
 
-1. Arranca **Virtual Desktop** y conecta el casco.
-2. Abre Max Payne 2 **como siempre**.
-3. El mod se carga solo. No hay que ejecutar nada más.
+1. Start **Virtual Desktop** on the PC and connect from the headset. **Do this first.**
+2. Launch Max Payne 2 as usual.
+3. The mod loads itself. There is nothing else to run.
+
+If the game opens on the monitor but never reaches the headset, Virtual Desktop was not connected
+in time. Close the game, connect, and try again.
 
 ---
 
-## La primera vez
+## The first time
 
-- **Ponte en posición T** (los dos brazos abiertos en cruz) durante un par de segundos en los
-  primeros minutos. El mod mide tu brazo solo y se lo guarda. **No tienes que pulsar nada.**
-- Si te ves más alto o más bajo que los personajes del juego, cambia `camara_altura_ojos` en el
-  `.ini`. **Puedes hacerlo con el juego abierto:** guardas el archivo y se aplica solo.
+- **Stand in a T-pose** (both arms straight out to the sides) for a couple of seconds during the
+  first few minutes. The mod measures your arm on its own and saves it. **You don't press
+  anything.**
+- If you feel taller or shorter than the characters in the game, change `camara_altura_ojos` in
+  the `.ini`. **You can do it with the game running:** save the file and it applies itself.
 
 ---
 
-## Los mandos — Meta Quest 3
+## Controls — Meta Quest 3
 
-Con los mandos Touch Plus. **Tu cabeza gira la cámara**, así que la palanca derecha queda libre.
+With Touch Plus controllers. **Your head turns the camera**, which leaves the right stick free.
 
-### Mando derecho
+### Right controller
 
-| botón | qué hace |
+| button | what it does |
 |---|---|
-| 🔫 **Gatillo** | **Disparar**. Con el selector de armas abierto, **elige el arma** |
-| ✊ **Agarre** (lateral) | **Usar / interactuar** (puertas, objetos) |
-| **A** | **Recargar** |
-| **B** | **Saltar** |
-| 🕹️ **Clic de la palanca** | **Analgésico** (painkiller) |
-| 🕹️ **Palanca** | nada — giras con la cabeza |
-| ✋ **Apuntar** | el arma va **donde apunta tu mano** |
+| 🔫 **Trigger** | **Fire**. With the weapon selector open, **confirms the weapon** |
+| ✊ **Grip** (side) | **Use / interact** (doors, objects) |
+| **A** | **Reload** |
+| **B** | **Jump** |
+| 🕹️ **Stick click** | **Painkiller** |
+| 🕹️ **Stick** | nothing — you turn with your head |
+| ✋ **Aim** | the gun points **where your hand points** |
 
-### Mando izquierdo
+### Left controller
 
-| botón | qué hace |
+| button | what it does |
 |---|---|
-| 🕹️ **Palanca** | **Caminar** (adelante, atrás y a los lados) |
-| ✊ **Agarre** (lateral) | **Golpe cuerpo a cuerpo** |
-| **X** | **Tiempo bala** (cámara lenta) |
-| **Y** | **Selector de armas** — cada pulsación pasa a la siguiente; el gatillo derecho la elige |
-| ☰ **Botón de las tres rayitas** | **Abrir y cerrar el menú del juego** (hace de `ESC`) |
+| 🕹️ **Stick** | **Walk** (forward, back and strafe) |
+| ✊ **Grip** (side) | **Melee attack** |
+| **X** | **Bullet time** (slow motion) |
+| **Y** | **Weapon selector** — each press steps to the next; the right trigger confirms |
+| ☰ **Menu button** | **Open and close the game menu** (acts as `ESC`) |
 
-### Dentro del menú del juego
+### Inside the game menu
 
 | | |
 |---|---|
-| 🕹️ **Palanca izquierda** | arriba y abajo para moverte; izquierda y derecha para cambiar un valor |
-| 🔫 **Gatillo** (cualquier mano) | elegir la opción |
-| **B / Y** | volver atrás |
+| 🕹️ **Left stick** | up/down to move; left/right to change a value |
+| 🔫 **Trigger** (either hand) | select the option |
+| **B / Y** | go back |
 
-### Tu cuerpo
+### Your body
 
 | | |
 |---|---|
-| **Girar la cabeza** | gira la cámara. El cuerpo de Max te sigue con retraso, para no marear |
-| **Dar un paso de verdad** | Max camina en esa dirección |
-| **Agacharte / asomarte** | el ojo se mueve de verdad (6 grados de libertad) |
+| **Turn your head** | turns the camera. Max's body follows with a delay, so it doesn't make you sick |
+| **Take a real step** | Max walks that way |
+| **Crouch / lean** | your eye actually moves (6 degrees of freedom) |
 
-### Teclas del teclado (para afinar, opcional)
+### Keyboard keys (optional fine-tuning)
 
-| tecla | qué hace |
+| key | what it does |
 |---|---|
-| **M** / **N** | subir / bajar la altura de los ojos, un centímetro por toque |
-| **,** / **.** | juntar / separar los ojos, un milímetro por toque |
+| **M** / **N** | raise / lower eye height, one centimetre per press |
+| **,** / **.** | move the eyes closer / further apart, one millimetre per press |
 
-**Todos los botones se pueden cambiar** desde `MaxPayne2VR.ini`, y casi todos **con el juego
-abierto**.
-
----
-
-## Ajustes
-
-Todo está en `MaxPayne2VR.ini`, en castellano y explicado **ajuste por ajuste**, con lo que hace,
-qué valores admite y qué vas a notar al cambiarlo.
-
-La mayoría se cambian **sin cerrar el juego**: guardas el archivo y el mod lo aplica solo. Los
-que no, lo dicen.
+**Every button can be remapped** in `MaxPayne2VR.ini`, and most of them **while the game is
+running**.
 
 ---
 
-## Si algo no funciona
+## Settings
 
-| lo que ves | qué mirar |
+Everything lives in `MaxPayne2VR.ini`, documented **setting by setting** — what it does, what
+values it takes, and what you will notice when you change it.
+
+Most of them apply **without closing the game**: save the file and the mod picks it up. The ones
+that can't say so.
+
+> The `.ini` and its setting names are in Spanish, so the file and the mod match. If you need it
+> in English, open an issue.
+
+---
+
+## Troubleshooting
+
+| what you see | what to check |
 |---|---|
-| El juego abre pero **no entra en el casco** | ¿Virtual Desktop está conectado **antes** de abrir el juego? ¿Estás usando SteamVR? No puede funcionar (ver arriba) |
-| Se ve **borroso** | la resolución del lanzador. Ponla al máximo (paso 4) |
-| Se ve **plano**, sin relieve | falta DXVK: comprueba que `d3d8.dll` y `d3d9.dll` están en la carpeta del juego |
-| **Nada** cambia al abrir el juego | `winmm.dll` está en la carpeta equivocada. Tiene que estar **junto a `MaxPayne2.exe`**, no dentro de `mod\` |
-| El brazo se comporta raro | ponte en posición T unos segundos para que te vuelva a medir |
+| The game starts but **never enters the headset** | connect Virtual Desktop **before** launching. If you are on SteamVR or Meta Link, it cannot work — see the runtime section |
+| It looks **blurry** | the launcher resolution. Set it to the maximum (step 4) |
+| It looks **flat**, no depth | `d3d8.dll` / `d3d9.dll` are missing or were not copied. All five files go in the game folder |
+| **Nothing** changes when you launch | `winmm.dll` is in the wrong place. It must sit **next to `MaxPayne2.exe`**, not inside `mod\` |
+| The game **closes on startup** | if you replaced the bundled DXVK with another version, put ours back |
+| The arm behaves strangely | stand in a T-pose for a few seconds so it measures you again |
 
-El mod deja un **registro** en la carpeta del juego que dice **qué se pidió y qué se aplicó de
-verdad**. Si abres un issue, adjúntalo: contesta la mitad de las preguntas él solo.
-
----
-
-## Desinstalar
-
-Borra `winmm.dll`. El juego vuelve a ser el original.
-No se ha modificado **ningún** archivo del juego en ningún momento.
+The mod writes **`MaxPayne2VR.log`** in the game folder, saying what was requested and what was
+actually applied — including the exact reason the headset could not be reached. If you open an
+issue, attach it: it answers half the questions on its own.
 
 ---
 
-## Créditos y licencias
+## Uninstalling
 
-Mod creado por **betotron** — [github.com/betotron](https://github.com/betotron)
+Delete `winmm.dll` and `MaxPayne2VR.ini`. The game goes back to normal.
+If you also want to undo DXVK, delete `d3d8.dll`, `d3d9.dll` and `dxvk.conf`.
+
+**No game file has been modified at any point.**
+
+---
+
+## Credits and licences
+
+Mod created by **betotron** — [github.com/betotron](https://github.com/betotron)
 Powered by **[techbuzzo.com](https://techbuzzo.com)**
 
-*Max Payne 2: The Fall of Max Payne* es propiedad de **Remedy Entertainment** y **Rockstar
-Games**. Este mod **no contiene ni distribuye ningún archivo del juego**: son dos archivos
-propios que se ponen al lado. Hace falta tener el juego original.
+*Max Payne 2: The Fall of Max Payne* is the property of **Remedy Entertainment** and **Rockstar
+Games**. This mod **contains and distributes no game files**. You need to own the original game.
 
-`winmm.dll` incluye el cargador de **OpenXR** (The Khronos Group) bajo licencia Apache 2.0.
-El texto completo está en [`LICENCIAS.txt`](LICENCIAS.txt).
+Third-party software included in this download, redistributed under its own licence:
+
+| | |
+|---|---|
+| **DXVK** 3.0.2 (`d3d8.dll`, `d3d9.dll`) | Philip Rebohle and contributors — zlib/libpng licence |
+| **OpenXR loader** (linked inside `winmm.dll`) | The Khronos Group — Apache 2.0 |
+
+Full texts in [`LICENCIAS.txt`](LICENCIAS.txt).
 
 ---
 
@@ -235,6 +280,6 @@ El texto completo está en [`LICENCIAS.txt`](LICENCIAS.txt).
 
 | | |
 |---|---|
-| candidato | `C-235` |
-| SHA-256 de `winmm.dll` | `76FD1F14D4E9AE3B78565A52AA1B020D3705998C1BCF5DC818430C11642F8F2E` |
+| build | `C-235` |
+| SHA-256 of `winmm.dll` | `76FD1F14D4E9AE3B78565A52AA1B020D3705998C1BCF5DC818430C11642F8F2E` |
 
