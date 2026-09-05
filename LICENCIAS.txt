@@ -1,14 +1,21 @@
 LICENCIAS DE TERCEROS INCLUIDAS EN winmm.dll
+THIRD-PARTY LICENCES INCLUDED IN winmm.dll
 ===========================================
 
-Este mod enlaza estaticamente el cargador de OpenXR (OpenXR-SDK, The Khronos
-Group Inc.), publicado bajo la licencia Apache 2.0. Su texto completo va a
-continuacion, tal y como exige esa licencia.
+ES  Este mod enlaza estaticamente el cargador de OpenXR (OpenXR-SDK, The
+    Khronos Group Inc.), publicado bajo la licencia Apache 2.0. Su texto
+    completo va a continuacion, tal y como exige esa licencia.
+    El resto de `winmm.dll` es codigo propio del mod.
 
-El resto de `winmm.dll` es codigo propio del mod.
+EN  This mod statically links the OpenXR loader (OpenXR-SDK, The Khronos
+    Group Inc.), released under the Apache 2.0 licence. Its full text
+    follows, as that licence requires.
+    The rest of `winmm.dll` is the mod's own code.
 
-Max Payne 2 es propiedad de Remedy Entertainment y Rockstar Games. Este paquete
-NO contiene ningun archivo del juego.
+ES  Max Payne 2 es propiedad de Remedy Entertainment y Rockstar Games.
+    Este paquete NO contiene ningun archivo del juego.
+EN  Max Payne 2 is the property of Remedy Entertainment and Rockstar
+    Games. This package contains NO game files.
 
 -------------------------------------------------------------------------------
 
