@@ -150,8 +150,18 @@ En un equipo de referencia, la lista llega hasta **2715 × 1527 × 32**. En el t
 2. Abre Max Payne 2 como siempre.
 3. El mod se carga solo. No hay que ejecutar nada más.
 
-Si el juego abre en el monitor pero no llega al casco, es que Virtual Desktop no estaba conectado
-a tiempo. Cierra el juego, conecta, y vuelve a abrirlo.
+> ### ⏳ Los primeros segundos verás el juego plano. Es normal.
+> El mod tiene que montar OpenXR, crear su propio dispositivo de Vulkan y engancharse al motor
+> antes de poder entregar imagen al casco. **Suele tardar unos 10 segundos**, y en un arranque
+> lento puede irse a medio minuto.
+>
+> *(Medido sobre 122 arranques reales: la mitad por debajo de 20 s, nueve de cada diez por debajo
+> de 30 s. En el equipo de referencia, 10 s.)*
+>
+> **No cierres el juego durante esa espera.** Cuando entra, entra de golpe.
+
+Si el juego abre en el monitor y **pasado medio minuto** sigue sin llegar al casco, es que Virtual
+Desktop no estaba conectado a tiempo. Cierra el juego, conecta, y vuelve a abrirlo.
 
 ---
 
@@ -161,6 +171,27 @@ a tiempo. Cierra el juego, conecta, y vuelve a abrirlo.
   primeros minutos. El mod mide tu brazo solo y se lo guarda. **No tienes que pulsar nada.**
 - Si te ves más alto o más bajo que los personajes del juego, cambia `camara_altura_ojos` en el
   `.ini`. **Puedes hacerlo con el juego abierto:** guardas el archivo y se aplica solo.
+
+---
+
+## ¿Lo quieres en español, con voces?
+
+El juego viene en inglés. Hay una guía de Steam que lo traduce **entero — voces y textos**:
+
+> ### 🇪🇸 [Traducción al español de Max Payne 2, tanto voces como textos](https://steamcommunity.com/sharedfiles/filedetails/?id=198579259)
+
+Sigue los pasos de esa guía. Se puede hacer **antes o después** de instalar el mod: son cosas
+independientes y no se estorban.
+
+> **Dos avisos honestos.**
+>
+> Esa traducción **sí reemplaza archivos del juego** —a diferencia de este mod, que solo añade los
+> suyos—. Haz una copia de la carpeta antes, o cuenta con reinstalar desde Steam si quieres
+> volver atrás.
+>
+> Y no la hemos probado junto al mod. **No debería dar problemas** —el mod no lee los archivos de
+> texto ni de voz del juego— pero eso es un razonamiento, no una medida. Si la usas y algo va
+> raro, abre un issue y lo miramos.
 
 ---
 

@@ -149,8 +149,18 @@ the last entry in the list.**
 2. Launch Max Payne 2 as usual.
 3. The mod loads itself. There is nothing else to run.
 
-If the game opens on the monitor but never reaches the headset, Virtual Desktop was not connected
-in time. Close the game, connect, and try again.
+> ### ⏳ The first few seconds you will see the game flat. That's normal.
+> The mod has to bring up OpenXR, create its own Vulkan device and hook into the engine before it
+> can deliver anything to the headset. **It usually takes about 10 seconds**, and on a slow start
+> it can stretch to half a minute.
+>
+> *(Measured over 122 real starts: half of them under 20 s, nine out of ten under 30 s. On the
+> reference machine, 10 s.)*
+>
+> **Don't close the game during that wait.** When it kicks in, it kicks in all at once.
+
+If the game opens on the monitor and **after half a minute** it still hasn't reached the headset,
+Virtual Desktop wasn't connected in time. Close the game, connect, and try again.
 
 ---
 
@@ -161,6 +171,27 @@ in time. Close the game, connect, and try again.
   anything.**
 - If you feel taller or shorter than the characters in the game, change `camara_altura_ojos` in
   the `.ini`. **You can do it with the game running:** save the file and it applies itself.
+
+---
+
+## Want it in Spanish, with dubbed voices?
+
+The game ships in English. There is a Steam guide that translates it **completely — both voices
+and text**:
+
+> ### 🇪🇸 [Traducción al español de Max Payne 2, tanto voces como textos](https://steamcommunity.com/sharedfiles/filedetails/?id=198579259)
+
+Follow that guide's steps. You can do it **before or after** installing the mod: they are
+independent and don't interfere.
+
+> **Two honest warnings.**
+>
+> That translation **does replace game files** — unlike this mod, which only adds its own. Back up
+> the folder first, or be ready to reinstall from Steam if you want to undo it.
+>
+> And we have not tested it together with the mod. **It shouldn't cause problems** — the mod never
+> reads the game's text or voice files — but that is reasoning, not a measurement. If you use it
+> and something looks off, open an issue.
 
 ---
 
