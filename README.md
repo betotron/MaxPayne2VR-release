@@ -3,7 +3,7 @@
 **Native virtual reality for *Max Payne 2: The Fall of Max Payne* (2003).**
 Real stereoscopy, head tracking, motion controllers, and aiming with your hand.
 
-![Max Payne 2 VR](imagenes/portada_en.png)
+![Max Payne 2 VR](imagenes/portada.jpg)
 
 ### 🎬 See it running
 

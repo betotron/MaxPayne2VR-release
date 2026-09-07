@@ -3,7 +3,7 @@
 **Realidad virtual nativa para *Max Payne 2: The Fall of Max Payne* (2003).**
 Estereoscopia real, cabeza con seguimiento, mandos y apuntado con la mano.
 
-![Max Payne 2 VR](imagenes/portada_es.png)
+![Max Payne 2 VR](imagenes/portada.jpg)
 
 ### 🎬 Mira cómo se ve
 
