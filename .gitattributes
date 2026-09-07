@@ -1,0 +1,9 @@
+# Que git NO toque nada de lo que hay aqui.
+#
+# Sin esto, git normaliza los finales de linea al hacer commit y el archivo
+# que se baja del repositorio deja de ser BYTE A BYTE el mismo que va en el
+# ZIP de la release. Se comprobo: el `.ini` salia con 4.809 bytes de
+# diferencia. No rompia nada -el lector trata el \r como espacio, probado con
+# las dos versiones y 187 ajustes leidos igual- pero dos descargas del mismo
+# mod que no coinciden es justo lo que las versiones existen para evitar.
+* -text

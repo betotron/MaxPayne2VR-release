@@ -125,7 +125,14 @@ Nothing else. No Visual Studio, no SDKs, no separate runtimes.
 
 ### Step 1 · Download
 
-Green **Code** button → **Download ZIP** → unzip it anywhere.
+> ## ⬇️ [**Download the latest version**](https://github.com/betotron/MaxPayne2VR-release/releases/latest)
+
+Grab the **`MaxPayne2VR-vX.Y.zip`** file from that page and unzip it anywhere.
+
+**Download from there, not from the green "Code" button.** That button gives you whatever is in
+the repository *right now*, which may be half-finished; the releases page gives you a **frozen
+version, with a date and release notes**. And if you ever open an issue, we'll know exactly what
+you were running.
 
 ### Step 2 · Open the game folder
 
