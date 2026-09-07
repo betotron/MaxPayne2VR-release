@@ -1,0 +1,87 @@
+name: "It doesn't work / No me funciona"
+description: "The mod doesn't reach the headset, or it looks flat. — El mod no llega al casco, o se ve plano."
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Please paste the diagnostic report below — it answers most of this on its own.**
+
+        The mod writes a file called **`MaxPayne2VR-informe.txt`** in your game folder,
+        right next to `MaxPayne2.exe`. Open it with Notepad and paste the whole thing.
+        It's about 35 lines and **it does not contain your Windows username**.
+
+        ---
+
+        🇪🇸 **Pega abajo el informe de diagnóstico — contesta casi todo él solo.**
+
+        El mod deja un archivo llamado **`MaxPayne2VR-informe.txt`** en la carpeta del
+        juego, junto a `MaxPayne2.exe`. Ábrelo con el Bloc de notas y pégalo entero.
+        Son unas 35 líneas y **no lleva el nombre de tu cuenta de Windows**.
+
+  - type: textarea
+    id: informe
+    attributes:
+      label: "MaxPayne2VR-informe.txt"
+      description: "Paste the whole file. / Pega el archivo entero."
+      render: text
+      placeholder: |
+        ================================================================
+         MaxPayne2VR - informe de diagnostico
+        ================================================================
+        ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: que-pasa
+    attributes:
+      label: "What do you see? / ¿Qué ves?"
+      description: >
+        In your own words. When does it happen — in the menu, when loading a level,
+        while playing? / Con tus palabras. ¿Cuándo pasa: en el menú, al cargar un
+        nivel, jugando?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: runtime
+    attributes:
+      label: "How do you connect the headset? / ¿Cómo conectas el casco?"
+      description: >
+        Only Virtual Desktop is known to work. Max Payne 2 is a 32-bit program and
+        SteamVR has no 32-bit OpenXR runtime. / Solo se sabe que funciona Virtual
+        Desktop. Max Payne 2 es de 32 bits y SteamVR no tiene runtime de 32 bits.
+      options:
+        - Virtual Desktop
+        - "Meta / Oculus Link or Air Link"
+        - SteamVR
+        - Other / Otro
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: comprobado
+    attributes:
+      label: "Before sending / Antes de enviar"
+      options:
+        - label: "The five files are next to `MaxPayne2.exe`, not inside a `mod` folder. / Los cinco archivos están junto a `MaxPayne2.exe`, no dentro de una carpeta `mod`."
+          required: true
+        - label: "I connected Virtual Desktop **before** launching the game. / Conecté Virtual Desktop **antes** de abrir el juego."
+          required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        If the report says your game files are **different from the tested ones**, that is
+        almost certainly the cause: the mod finds where to hook by searching byte patterns
+        inside the engine DLLs, and another version of the game doesn't have them.
+        Tell us which version you own (Steam, GOG, Payne Evolution, a community patch).
+
+        ---
+
+        Si el informe dice que tus archivos del juego son **distintos a los probados**, esa
+        es casi seguro la causa: el mod busca dónde engancharse byte a byte dentro de las
+        DLL del motor, y otra versión del juego no los tiene. Dinos qué versión tienes
+        (Steam, GOG, Payne Evolution, un parche de la comunidad).

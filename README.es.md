@@ -326,9 +326,23 @@ que no, lo dicen.
 | El juego **se cierra al arrancar** | si cambiaste el DXVK incluido por otra versión, vuelve a poner el nuestro |
 | El brazo se comporta raro | ponte en posición T unos segundos para que te vuelva a medir |
 
-El mod deja **`MaxPayne2VR.log`** en la carpeta del juego, que dice qué se pidió y qué se aplicó
-de verdad — incluido el motivo exacto por el que no se pudo llegar al casco. Si abres un issue,
-adjúntalo: contesta la mitad de las preguntas él solo.
+### 📋 Antes de abrir un issue: el informe
+
+El mod deja **`MaxPayne2VR-informe.txt`** en la carpeta del juego, junto a `MaxPayne2.exe`.
+
+Son unas 35 líneas, y **empiezan diciendo en una frase qué le pasa a tu instalación**. Ábrelo con
+el Bloc de notas y **pégalo entero** en el issue: contesta casi todo él solo.
+
+No lleva el nombre de tu cuenta de Windows — las rutas salen recortadas a propósito.
+
+> **Lo que más veces resuelve el caso:** el informe compara tus archivos del juego con los que se
+> usaron para construir el mod. Si dice **«DISTINTO AL PROBADO»**, ahí está la causa. El mod busca
+> dónde engancharse **byte a byte** dentro de las DLL del motor, y con otra versión del juego esos
+> sitios no aparecen: los ganchos no se instalan y el casco se queda **plano** dentro del juego
+> aunque en el menú se vea bien.
+
+Al lado hay también **`MaxPayne2VR.log`**, mucho más largo, con todo el detalle. Adjúntalo solo si
+te lo piden.
 
 ---
 
@@ -365,8 +379,8 @@ Los textos completos, en [`LICENCIAS.txt`](LICENCIAS.txt).
 
 | | |
 |---|---|
-| version | **1.1 BETA** |
-| candidato interno | `C-235` |
-| SHA-256 de `winmm.dll` | `76FD1F14D4E9AE3B78565A52AA1B020D3705998C1BCF5DC818430C11642F8F2E` |
+| version | **1.2 BETA** |
+| candidato interno | `C-236` |
+| SHA-256 de `winmm.dll` | `9CE21170C9C31EC91A2777A7C5AF0994D22D7122FB52986CA4549B81CC634B93` |
 | DXVK incluido | 3.0.2 (32 bits) |
 

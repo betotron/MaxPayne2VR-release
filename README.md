@@ -329,9 +329,24 @@ that can't say so.
 | The game **closes on startup** | if you replaced the bundled DXVK with another version, put ours back |
 | The arm behaves strangely | stand in a T-pose for a few seconds so it measures you again |
 
-The mod writes **`MaxPayne2VR.log`** in the game folder, saying what was requested and what was
-actually applied — including the exact reason the headset could not be reached. If you open an
-issue, attach it: it answers half the questions on its own.
+### 📋 Before opening an issue: the report
+
+The mod writes **`MaxPayne2VR-informe.txt`** in the game folder, next to `MaxPayne2.exe`.
+
+It's about 35 lines, and **it starts by saying in one sentence what is wrong with your install**.
+Open it in Notepad and **paste the whole thing** into the issue: it answers almost everything
+on its own.
+
+It does not contain your Windows username — paths are trimmed on purpose.
+
+> **What solves most cases:** the report compares your game files against the ones the mod was
+> built with. If it says **"DISTINTO AL PROBADO"** (different from the tested one), that's the
+> cause. The mod finds where to hook by searching **byte patterns** inside the engine DLLs, and
+> another version of the game doesn't have them: the hooks don't install and the headset stays
+> **flat** in-game even though the menu looks right.
+
+There is also **`MaxPayne2VR.log`** next to it, much longer, with the full detail. Attach that
+one only if you're asked to.
 
 ---
 
@@ -367,8 +382,8 @@ Full texts in [`LICENCIAS.txt`](LICENCIAS.txt).
 
 | | |
 |---|---|
-| version | **1.1 BETA** |
-| internal build | `C-235` |
-| SHA-256 of `winmm.dll` | `76FD1F14D4E9AE3B78565A52AA1B020D3705998C1BCF5DC818430C11642F8F2E` |
+| version | **1.2 BETA** |
+| internal build | `C-236` |
+| SHA-256 of `winmm.dll` | `9CE21170C9C31EC91A2777A7C5AF0994D22D7122FB52986CA4549B81CC634B93` |
 | DXVK bundled | 3.0.2 (32-bit) |
 
